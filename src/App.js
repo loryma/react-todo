@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import Input from "./components/Input/Input";
+import Home from "./containers/Page/Home/Home";
+
+import TodosContext from "./store/context/TodosContext";
+import TodosDispatch from "./store/context/TodosDispatchContext";
+
+import todosReducer from "./store/reducer/TodosReducer";
+import "./App.css";
+
+const initialState = {
+  todos: [],
+  filter: "all"
+};
 
 function App() {
+  const [todos, dispatch] = useReducer(todosReducer, initialState);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <TodosDispatch.Provider value={dispatch}>
+        <Input />
+        <TodosContext.Provider value={todos}>
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </TodosContext.Provider>
+      </TodosDispatch.Provider>
+    </BrowserRouter>
   );
 }
 
