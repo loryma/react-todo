@@ -1,6 +1,6 @@
 ## Todo app built with React
 
-deployed at https://react-hooks-todoapp.netlify.com/?_ga=2.23120441.2029273033.1574188739-477769513.1572785559
+deployed at https://react-hooks-todoapp.netlify.com
 
 Funtionality:
 
