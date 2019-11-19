@@ -2,9 +2,6 @@ const uuid = require("uuid/v4");
 
 function todosReducer(state, action) {
   switch (action.type) {
-    case "setFilter":
-      return { ...state, filter: action.filter };
-
     case "addTodo":
       const id = uuid();
       return {
@@ -12,12 +9,12 @@ function todosReducer(state, action) {
         todos: [...state.todos, { id, text: action.text, completed: false }]
       };
 
-    case "remove":
+    case "deleteTodo":
       const newList = state.todos.filter(todo => todo.id !== action.id);
       return { ...state, todos: [...newList] };
 
     case "toggleCompleted":
-      const todoList = state.todo.filter(todo => {
+      const todoList = state.todos.map(todo => {
         if (todo.id === action.id) {
           return { ...todo, completed: !todo.completed };
         }

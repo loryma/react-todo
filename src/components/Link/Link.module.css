@@ -1,0 +1,10 @@
+.Link {
+  padding: 0.4em 2em;
+  border: 1px solid #d1d1d1;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.Link-active {
+  background-color: #21b2ab;
+}

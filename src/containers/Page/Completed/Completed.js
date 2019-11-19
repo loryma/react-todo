@@ -3,10 +3,11 @@ import TodoList from "../../TodoList/TodoList";
 
 import TodosContext from "../../../store/context/TodosContext";
 
-const Home = () => {
+const Completed = () => {
   const { todos } = useContext(TodosContext);
+  const completedTodos = todos.filter(el => el.completed);
 
-  return <TodoList todos={todos} />;
+  return <TodoList todos={completedTodos} />;
 };
 
-export default Home;
+export default Completed;

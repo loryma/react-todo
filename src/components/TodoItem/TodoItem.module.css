@@ -1,0 +1,26 @@
+.TodoItem {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-size: 16px;
+  padding: 0.4em 0;
+}
+
+.TodoText {
+  flex-grow: 1;
+  color: #888;
+}
+
+.Delete {
+  width: 20px;
+  height: 100%;
+  display: flex;
+}
+
+.Completed {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
