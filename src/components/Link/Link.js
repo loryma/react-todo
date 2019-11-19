@@ -4,7 +4,12 @@ import classes from "./Link.module.css";
 
 const Link = ({ to, children }) => {
   return (
-    <NavLink className={classes.Link} to={to}>
+    <NavLink
+      exact
+      activeClassName={classes.Active}
+      className={classes.Link}
+      to={to}
+    >
       {children}
     </NavLink>
   );

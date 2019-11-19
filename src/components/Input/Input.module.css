@@ -5,12 +5,20 @@
   -webkit-appearance: none;
   appearance: none;
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 0.5em;
   height: 1.8em;
   color: #888;
 }
 
 .Input:focus {
-  outline: 1px solid #888;
+  outline: none;
+}
+
+.Input::placeholder {
+  color: #888;
+}
+
+.Input:focus::placeholder {
+  color: transparent;
 }

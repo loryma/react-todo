@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import todosDispatch from "../../store/context/TodosDispatchContext";
+import Checkbox from "../Checkbox/Checkbox";
 import classes from "./Completed.module.css";
 
 const Completed = ({ checked, id }) => {
@@ -8,14 +9,8 @@ const Completed = ({ checked, id }) => {
   const onChange = () => {
     dispatch({ type: "toggleCompleted", id: id });
   };
-  return (
-    <input
-      className={classes.Completed}
-      type="checkbox"
-      onChange={onChange}
-      checked={checked}
-    />
-  );
+
+  return <Checkbox checked={checked} onChange={onChange} />;
 };
 
 export default Completed;

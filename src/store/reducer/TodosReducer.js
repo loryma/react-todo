@@ -23,13 +23,30 @@ function todosReducer(state, action) {
       return { ...state, todos: [...todoList] };
 
     case "editTodo":
-      const editedTodoList = state.todo.filter(todo => {
+      const editedTodoList = state.todo.map(todo => {
         if (todo.id === action.id) {
           return { ...todo, text: action.text };
         }
         return todo;
       });
       return { ...state, todos: [...editedTodoList] };
+    case "clearCompleted":
+      const activeTodos = state.todos.filter(todo => !todo.completed);
+      return { ...state, todos: [...activeTodos] };
+
+    case "checkAll":
+      let todos;
+      if (action.check) {
+        todos = state.todos.map(todo =>
+          todo.completed ? todo : { ...todo, completed: true }
+        );
+      } else {
+        todos = state.todos.map(todo =>
+          todo.completed ? { ...todo, completed: false } : todo
+        );
+      }
+
+      return { ...state, todos: [...todos] };
 
     default:
       return state;

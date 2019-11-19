@@ -23,7 +23,6 @@ const Input = () => {
   };
 
   return (
-    // <form>
     <input
       className={classes.Input}
       type="text"
@@ -32,7 +31,6 @@ const Input = () => {
       onKeyDown={onKeyDown}
       placeholder="Insert todo item..."
     />
-    // </form>
   );
 };
 

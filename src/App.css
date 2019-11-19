@@ -1,5 +1,12 @@
 .App {
   width: 90%;
-  margin: 1em auto;
+  margin: 1.5em auto;
   max-width: 800px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.App__header {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 1em;
 }

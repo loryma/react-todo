@@ -1,0 +1,12 @@
+.CheckAll {
+  color: #727272;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.Checkbox {
+  width: 30px;
+  display: inline-block;
+}
