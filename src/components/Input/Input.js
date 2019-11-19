@@ -13,24 +13,27 @@ const Input = () => {
     setValue(newTodo);
   };
 
-  const onKeyDown = e => {
-    if (e.key === "Enter") {
-      if (value.trim()) {
-        dispatch({ type: "addTodo", text: value });
-        setValue("");
-      }
+  const onSubmit = e => {
+    e.preventDefault();
+    if (value.trim()) {
+      dispatch({ type: "addTodo", text: value });
+      setValue("");
     }
   };
 
   return (
-    <input
-      className={classes.Input}
-      type="text"
-      value={value}
-      onChange={onChange}
-      onKeyDown={onKeyDown}
-      placeholder="Insert todo item..."
-    />
+    <form onSubmit={onSubmit} className={classes.Form}>
+      <input
+        className={classes.Input}
+        type="text"
+        value={value}
+        onChange={onChange}
+        placeholder="Insert todo item..."
+      />
+      <button className={classes.Submit} type="submit">
+        Submit
+      </button>
+    </form>
   );
 };
 

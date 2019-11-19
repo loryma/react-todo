@@ -1,5 +1,5 @@
 .Input {
-  width: 100%;
+  flex-grow: 1;
   border-radius: 2px;
   border: 1px solid #d1d1d1;
   -webkit-appearance: none;
@@ -21,4 +21,17 @@
 
 .Input:focus::placeholder {
   color: transparent;
+}
+.Form {
+  width: 100%;
+  display: flex;
+}
+.Submit {
+  border: 1px solid #d1d1d1;
+  color: #727272;
+  font-size: 12px;
+}
+
+.Submit:focus {
+  outline: none;
 }
