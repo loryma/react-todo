@@ -3,7 +3,7 @@ import todosDispatch from "../../store/context/TodosDispatchContext";
 
 import classes from "./Input.module.css";
 
-const Input = () => {
+const Input = ({ listId }) => {
   const dispatch = useContext(todosDispatch);
   const [value, setValue] = useState("");
 
@@ -16,7 +16,7 @@ const Input = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (value.trim()) {
-      dispatch({ type: "addTodo", text: value });
+      dispatch({ type: "addTodo", text: value, listId });
       setValue("");
     }
   };

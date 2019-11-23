@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import todosDispatch from "../../store/context/TodosDispatchContext";
 import classes from "./ClearCompleted.module.css";
 
-const ClearCompleted = () => {
+const ClearCompleted = ({ listId }) => {
   const dispatch = useContext(todosDispatch);
 
   const onClick = e => {
-    dispatch({ type: "clearCompleted" });
+    dispatch({ type: "clearCompleted", listId });
   };
   return (
     <div onClick={onClick} className={classes.ClearCompleted}>

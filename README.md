@@ -1,9 +1,12 @@
 ## Todo app built with React
 
-deployed at https://react-hooks-todoapp.netlify.com
+[![Netlify Status](https://api.netlify.com/api/v1/badges/778e9d92-8ce2-47bc-a0a4-7d17ef8fb86e/deploy-status)](https://app.netlify.com/sites/react-hooks-todoapp/deploys)
 
-Funtionality:
+Deployed at https://react-hooks-todoapp.netlify.com
 
+**Functionality:**
+
+- create new list of tasks
 - add task
 - remove task
 - mark task as completed
@@ -12,6 +15,9 @@ Funtionality:
 - mark all tasks as completed
 - remove all completed tasks
 
-Todo app uses uses `useContext` hook and `useRducer` for managing state and passing state deep into component tree.
-`react-router-dom` package is used for showing pages with active and completed items.
-`react-transition-group` package is used for animation of adding/removing tasks.
+Todo app uses uses `useContext` hook and `useReducer` for managing state and passing state deep into component tree.
+
+**Dependencies**
+
+- `react-router-dom` package is used for showing pages with active and completed items.
+- `react-transition-group` package is used for animation of adding/removing tasks.

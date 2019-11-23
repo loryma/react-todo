@@ -2,51 +2,115 @@ const uuid = require("uuid/v4");
 
 function todosReducer(state, action) {
   switch (action.type) {
+    case "CHANGE_FILTER":
+      const changeFilter = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            filter: action.filter
+          };
+        }
+        return [...changeFilter];
+      });
+      return;
+    case "addTodoList":
+      let listId = uuid();
+      return [
+        ...state,
+        { id: listId, filter: "all", title: action.title, todos: [] }
+      ];
+
     case "addTodo":
       const id = uuid();
-      return {
-        ...state,
-        todos: [...state.todos, { id, text: action.text, completed: false }]
-      };
+      let appendedList = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            todos: [...list.todos, { id, text: action.text, completed: false }]
+          };
+        }
+        return list;
+      });
+      return [...appendedList];
 
     case "deleteTodo":
-      const newList = state.todos.filter(todo => todo.id !== action.id);
-      return { ...state, todos: [...newList] };
+      const deleteTodo = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            todos: list.todos.filter(todo => todo.id !== action.id)
+          };
+        }
+        return list;
+      });
+      return [...deleteTodo];
 
     case "toggleCompleted":
-      const todoList = state.todos.map(todo => {
-        if (todo.id === action.id) {
-          return { ...todo, completed: !todo.completed };
+      const toggleTodo = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            todos: list.todos.map(todo => {
+              if (todo.id === action.id) {
+                return { ...todo, completed: !todo.completed };
+              }
+              return todo;
+            })
+          };
         }
-        return todo;
+        return list;
       });
-      return { ...state, todos: [...todoList] };
+
+      return [...toggleTodo];
 
     case "editTodo":
-      const editedTodoList = state.todo.map(todo => {
-        if (todo.id === action.id) {
-          return { ...todo, text: action.text };
+      const editTodo = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            todos: list.todos.map(todo => {
+              if (todo.id === action.id) {
+                return { ...todo, text: action.text };
+              }
+              return todo;
+            })
+          };
         }
-        return todo;
+        return list;
       });
-      return { ...state, todos: [...editedTodoList] };
+
+      return [...editTodo];
     case "clearCompleted":
-      const activeTodos = state.todos.filter(todo => !todo.completed);
-      return { ...state, todos: [...activeTodos] };
+      const activeTodos = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            todos: list.todos.filter(todo => !todo.completed)
+          };
+        }
+        return list;
+      });
+
+      return [...activeTodos];
 
     case "checkAll":
-      let todos;
-      if (action.check) {
-        todos = state.todos.map(todo =>
-          todo.completed ? todo : { ...todo, completed: true }
-        );
-      } else {
-        todos = state.todos.map(todo =>
-          todo.completed ? { ...todo, completed: false } : todo
-        );
-      }
+      const checkTodos = state.map(list => {
+        if (list.id === action.listId) {
+          return {
+            ...list,
+            todos: list.todos.map(todo => {
+              if (action.check) {
+                return todo.completed ? todo : { ...todo, completed: true };
+              } else {
+                return todo.completed ? { ...todo, completed: false } : todo;
+              }
+            })
+          };
+        }
+        return list;
+      });
 
-      return { ...state, todos: [...todos] };
+      return [...checkTodos];
 
     default:
       return state;

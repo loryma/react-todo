@@ -1,14 +1,18 @@
 import React from "react";
 import Link from "../Link/Link";
 
-const PATHS = [
-  { link: "/", text: "All" },
-  { link: "/active", text: "Active" },
-  { link: "/completed", text: "Completed" }
+const FILTERS = [
+  { text: "All", filter: "all" },
+  { text: "Active", filter: "active" },
+  { text: "Completed", filter: "completed" }
 ];
 
-const Navigation = () => {
-  const Links = PATHS.map(({ link, text }) => <Link to={link}>{text}</Link>);
+const Navigation = ({ activeFilter, listId }) => {
+  const Links = FILTERS.map(({ filter, text }) => (
+    <Link activeFilter={activeFilter} listId={listId} filter={filter}>
+      {text}
+    </Link>
+  ));
 
   return <div>{Links}</div>;
 };

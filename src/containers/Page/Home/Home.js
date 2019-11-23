@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import TodoList from "../../TodoList/TodoList";
+import TodoList from "../../TodoTaskList/TodoTaskList";
 
 import TodosContext from "../../../store/context/TodosContext";
 

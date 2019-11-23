@@ -3,11 +3,11 @@ import todosDispatch from "../../store/context/TodosDispatchContext";
 import Checkbox from "../Checkbox/Checkbox";
 import classes from "./Completed.module.css";
 
-const Completed = ({ checked, id }) => {
+const Completed = ({ checked, id, listId }) => {
   const dispatch = useContext(todosDispatch);
 
   const onChange = () => {
-    dispatch({ type: "toggleCompleted", id: id });
+    dispatch({ type: "toggleCompleted", id, listId });
   };
 
   return <Checkbox checked={checked} onChange={onChange} />;
