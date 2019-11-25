@@ -1,0 +1,17 @@
+.Link {
+  padding: 0.1em 0.3em;
+  border: 1px solid #d1d1d1;
+  color: #727272;
+  display: inline-block;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 0.5em;
+  cursor: pointer;
+  background-color: white;
+}
+
+.Active {
+  background: #727272;
+  color: white;
+}

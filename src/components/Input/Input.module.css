@@ -1,0 +1,37 @@
+.Input {
+  flex-grow: 1;
+  border-radius: 2px;
+  border: 1px solid #d1d1d1;
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  font-size: 16px;
+  padding: 0 0.5em;
+  height: 1.8em;
+  color: #888;
+}
+
+.Input:focus {
+  outline: none;
+}
+
+.Input::placeholder {
+  color: #888;
+}
+
+.Input:focus::placeholder {
+  color: transparent;
+}
+.Form {
+  width: 100%;
+  display: flex;
+}
+.Submit {
+  border: 1px solid #d1d1d1;
+  color: #727272;
+  font-size: 12px;
+}
+
+.Submit:focus {
+  outline: none;
+}

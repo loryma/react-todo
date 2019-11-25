@@ -1,24 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useReducer } from "react";
+import TodosDispatch from "./store/context/TodosDispatchContext";
+import NewListContext from "./store/context/NewListContext";
+
+import todosReducer from "./store/reducer/TodosReducer";
+import newListReducer from "./store/reducer/newListReducer";
+import "./App.css";
+import TodoList from "./containers/TodoList/TodoList";
+import NewList from "./components/NewList/NewList";
+import TodoListInput from "./components/TodoListInput/TodoListInput";
+
+const initialTodos = [
+  {
+    id: "dfsfs89435",
+    title: "example list name",
+    filter: "all",
+    todos: [{ id: "sdkf748r8f", text: "milk", completed: false }]
+  }
+];
 
 function App() {
+  const [todos, dispatch] = useReducer(todosReducer, initialTodos);
+  const [showNewList, dispatchShowNewList] = useReducer(newListReducer, false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NewListContext.Provider value={dispatchShowNewList}>
+        <div className="App__header">
+          <h1 className="App__title">Todo App</h1>
+          <NewList />
+        </div>
+
+        <TodosDispatch.Provider value={dispatch}>
+          {showNewList && <TodoListInput />}
+          {todos.length > 0 && <TodoList todos={todos} />}
+        </TodosDispatch.Provider>
+      </NewListContext.Provider>
     </div>
   );
 }

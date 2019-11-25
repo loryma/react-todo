@@ -1,0 +1,25 @@
+.Delete {
+  width: 8px;
+  height: 8px;
+  position: relative;
+  cursor: pointer;
+  margin: auto;
+}
+
+.Delete::after,
+.Delete::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 50%;
+  height: 2px;
+  background-color: #888;
+}
+
+.Delete::before {
+  transform: rotate(45deg);
+}
+
+.Delete::after {
+  transform: rotate(-45deg);
+}

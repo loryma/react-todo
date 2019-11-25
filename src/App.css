@@ -1,22 +1,19 @@
 .App {
-  text-align: center;
+  width: 90%;
+  margin: 1.5em auto;
+  max-width: 800px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
+.App__title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #727272;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App__header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+  margin-bottom: 2em;
 }
