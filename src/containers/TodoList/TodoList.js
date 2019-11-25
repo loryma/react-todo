@@ -1,5 +1,5 @@
 import React from "react";
-import TodoContainer from "../../TodoTaskList/Container";
+import TodoContainer from "../TodoContainer/TodoContainer";
 
 const TodoList = ({ todos }) => {
   const todoLists = todos.map(list => (

@@ -20,4 +20,3 @@ Todo app uses uses `useContext` hook and `useReducer` for managing state and pas
 **Dependencies**
 
 - `react-router-dom` package is used for showing pages with active and completed items.
-- `react-transition-group` package is used for animation of adding/removing tasks.

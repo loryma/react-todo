@@ -1,5 +1,5 @@
 import React from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
 import TodoItem from "../../components/TodoItem/TodoItem";
 import classes from "./TodoTaskList.module.css";
 import "./transition.css";
@@ -16,11 +16,9 @@ const TodoTaskList = ({ todos, listId, filter }) => {
     }
   });
   const List = filteredTodos.map(todo => (
-    <CSSTransition key={todo.id} timeout={300} classNames="item">
-      <TodoItem todo={todo} listId={listId} />
-    </CSSTransition>
+    <TodoItem key={todo.id} todo={todo} listId={listId} />
   ));
-  return <TransitionGroup className={classes.TodoList}>{List}</TransitionGroup>;
+  return List.length > 0 && <div className={classes.TodoList}>{List}</div>;
 };
 
 export default TodoTaskList;

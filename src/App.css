@@ -5,8 +5,15 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.App__header {
+.App__title {
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 1em;
+  color: #727272;
+}
+
+.App__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
 }

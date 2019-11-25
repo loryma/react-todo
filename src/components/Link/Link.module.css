@@ -7,8 +7,11 @@
   text-decoration: none;
   font-weight: bold;
   margin-right: 0.5em;
+  cursor: pointer;
+  background-color: white;
 }
 
 .Active {
-  background-color: #21b2ab;
+  background: #727272;
+  color: white;
 }

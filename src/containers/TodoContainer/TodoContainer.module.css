@@ -1,0 +1,9 @@
+.TodoContainer {
+  margin-bottom: 3em;
+  box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.2);
+  border: 1px solid rgba(90, 116, 148, 0.2);
+}
+
+.Content {
+  padding: 10px;
+}

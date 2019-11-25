@@ -10,10 +10,10 @@ function todosReducer(state, action) {
             filter: action.filter
           };
         }
-        return [...changeFilter];
+        return list;
       });
-      return;
-    case "addTodoList":
+      return [...changeFilter];
+    case "ADD_LIST":
       let listId = uuid();
       return [
         ...state,

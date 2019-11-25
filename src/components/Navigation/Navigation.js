@@ -9,7 +9,12 @@ const FILTERS = [
 
 const Navigation = ({ activeFilter, listId }) => {
   const Links = FILTERS.map(({ filter, text }) => (
-    <Link activeFilter={activeFilter} listId={listId} filter={filter}>
+    <Link
+      key={text}
+      activeFilter={activeFilter}
+      listId={listId}
+      filter={filter}
+    >
       {text}
     </Link>
   ));

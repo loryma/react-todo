@@ -1,22 +1,20 @@
-import React, { useContext, useState } from "react";
-import todosDispatch from "../../store/context/TodosDispatchContext";
+import React, { useState } from "react";
 
 import classes from "./Input.module.css";
 
-const Input = ({ listId }) => {
-  const dispatch = useContext(todosDispatch);
+const Input = ({ onFormSubmit, placeholder }) => {
   const [value, setValue] = useState("");
 
   const onChange = e => {
     let newTodo = e.target.value;
 
-    setValue(newTodo);
+    setValue(newTodo.slice(0, 60));
   };
 
   const onSubmit = e => {
     e.preventDefault();
     if (value.trim()) {
-      dispatch({ type: "addTodo", text: value, listId });
+      onFormSubmit(value);
       setValue("");
     }
   };
@@ -28,7 +26,7 @@ const Input = ({ listId }) => {
         type="text"
         value={value}
         onChange={onChange}
-        placeholder="Insert todo item..."
+        placeholder={placeholder}
       />
       <button className={classes.Submit} type="submit">
         Submit

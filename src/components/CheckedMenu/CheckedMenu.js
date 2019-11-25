@@ -3,14 +3,12 @@ import CheckAll from "../CheckAll/CheckAll";
 import ItemsCounter from "../ItemsCounter/ItemsCounter";
 import todosDispath from "../../store/context/TodosDispatchContext";
 
-import todosContext from "../../store/context/TodosContext";
+import todosContext from "../../store/context/NewListContext";
 
 import classes from "./CheckedMenu.module.css";
 
-const CheckedMenu = ({ listId }) => {
+const CheckedMenu = ({ listId, todos }) => {
   const dispatch = useContext(todosDispath);
-  const list = useContext(todosContext);
-  const todos = list.find(el => el.id === listId).todos;
 
   const containActiveTodos =
     todos.length === 0 || todos.some(el => !el.completed);

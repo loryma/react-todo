@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import todosDispatch from "../../store/context/TodosDispatchContext";
 import classes from "./Link.module.css";
-import { link } from "fs";
 
 const Link = ({ children, activeFilter, filter, listId }) => {
   const dispatch = useContext(todosDispatch);
