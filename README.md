@@ -1,6 +1,6 @@
 ## Todo app built with React
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/778e9d92-8ce2-47bc-a0a4-7d17ef8fb86e/deploy-status)](https://app.netlify.com/sites/react-hooks-todoapp/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/896ced69-8b84-4f3d-ad82-b0a459cf01bc/deploy-status)](https://app.netlify.com/sites/react-hooks-todoapp/deploys)
 
 Deployed at https://react-hooks-todoapp.netlify.com
 

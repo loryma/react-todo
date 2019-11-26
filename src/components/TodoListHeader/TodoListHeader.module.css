@@ -1,0 +1,6 @@
+.TodoListHeader {
+  padding: 1em 10px 1em 18px;
+  background: cornflowerblue;
+  display: flex;
+  align-items: center;
+}

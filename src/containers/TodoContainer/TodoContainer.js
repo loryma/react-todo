@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer/Footer";
 import CheckedMenu from "../../components/CheckedMenu/CheckedMenu";
-import TodoListTitle from "../../components/TodoListTitle/TodoListTitle";
+import TodoListHeader from "../../components/TodoListHeader/TodoListHeader";
 import TodoInput from "../../components/TodoInput/TodoInput";
 import TodoTaskList from "../TodoTaskList/TodoTaskList";
 import classes from "./TodoContainer.module.css";
@@ -9,7 +9,7 @@ import classes from "./TodoContainer.module.css";
 const TodoContainer = ({ todos, listId, title, filter }) => {
   return (
     <div className={classes.TodoContainer}>
-      <TodoListTitle title={title} />
+      <TodoListHeader title={title} listId={listId} />
       <div className={classes.Content}>
         <TodoInput listId={listId} />
         <TodoTaskList todos={todos} filter={filter} listId={listId} />

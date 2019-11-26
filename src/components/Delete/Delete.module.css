@@ -23,3 +23,8 @@
 .Delete::after {
   transform: rotate(-45deg);
 }
+
+.White::after,
+.White::before {
+  background-color: white;
+}

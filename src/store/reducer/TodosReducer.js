@@ -20,6 +20,9 @@ function todosReducer(state, action) {
         { id: listId, filter: "all", title: action.title, todos: [] }
       ];
 
+    case "DELETE_LIST":
+      return state.filter(list => list.id !== action.listId);
+
     case "addTodo":
       const id = uuid();
       let appendedList = state.map(list => {
