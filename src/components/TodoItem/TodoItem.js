@@ -1,6 +1,6 @@
 import React from "react";
 import Completed from "../Completed/Completed";
-import Delete from "../Delete/Delete";
+import TodoDelete from "../TodoDelete/TodoDelete";
 
 import classes from "./TodoItem.module.css";
 
@@ -16,7 +16,7 @@ const TodoItem = ({ todo, listId }) => {
       </div>
       <div className={textClasses}>{todo.text}</div>
       <div className={classes.Delete}>
-        <Delete id={todo.id} listId={listId} />
+        <TodoDelete id={todo.id} listId={listId} />
       </div>
     </div>
   );

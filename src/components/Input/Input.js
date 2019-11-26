@@ -8,7 +8,7 @@ const Input = ({ onFormSubmit, placeholder }) => {
   const onChange = e => {
     let newTodo = e.target.value;
 
-    setValue(newTodo.slice(0, 60));
+    setValue(newTodo.slice(0, 30));
   };
 
   const onSubmit = e => {
